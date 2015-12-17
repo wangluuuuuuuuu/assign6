@@ -52,6 +52,7 @@ void setup () {
 	treasure = new Treasure();
 	hpDisplay = new HPDisplay();
 	fighter = new Fighter(20);
+
 }
 
 void draw()
@@ -86,13 +87,14 @@ void draw()
 			}
 		}
 		// 這地方應該加入Fighter 血量顯示UI
-		
+hpDisplay.updateWithFighterHP(fighter.hp);
 	}
 	else if (state == GameState.END) {
 		bg.draw();
 	}
 }
 boolean isHit(int ax, int ay, int aw, int ah, int bx, int by, int bw, int bh)
+//boolean isHit(enemys.x , enemys.y , enemyImg.width, enemyImg.height, fighter.x, fighter.y, fighter.fighterImg.width, fighter.fighterImg.h)
 {
 	// Collision x-axis?
     boolean collisionX = (ax + aw >= bx) && (bx + bw >= ax);
@@ -136,4 +138,3 @@ void keyReleased(){
     }
   }
 }
-
