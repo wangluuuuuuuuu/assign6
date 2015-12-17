@@ -16,23 +16,25 @@ class Enemy{
 		this.x+= 5;	
 	}
 
-	void draw()
-	{
-		image(enemyImg, x, y);
-	}
+	void draw()	{
+ image(enemyImg,x , y );}
+boolean isCollideWithFighter(){
+if(isHit(x , y , enemyImg.width, enemyImg.height, fighter.x, fighter.y, fighter.fighterImg.width, fighter.fighterImg.height)) {
+return true;}
+else{
+return false;}
+}
 
-	boolean isCollideWithFighter()
-	{
-		return false;
-	}
 
-	boolean isOutOfBorder()
-	{
-		return false;
+	boolean isOutOfBorder()	{
+     if (x>=640-enemyImg.width)
+     return true;
+     else
+     return false;
 	}
-
 
 }
+
 
 void addEnemy(int type)
 {	
